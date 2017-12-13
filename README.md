@@ -1,7 +1,9 @@
 # QPretty
 
 This package offers a wrapper on top of the [prettyprinter][1] package for
-defining prettyprinting functions.
+defining prettyprinting functions. It re-exports module
+[Data.Text.Prettyprint.Doc][1], and provides an abstract datatype, `EDoc`,
+which is built using the `ppr` Quasiquoter.
 
 ## EDoc
 
