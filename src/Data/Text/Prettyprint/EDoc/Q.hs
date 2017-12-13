@@ -1,21 +1,14 @@
-{-# LANGUAGE RankNTypes #-}
-{-# LANGUAGE ExistentialQuantification #-}
-{-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE DeriveDataTypeable #-}
-{-# LANGUAGE StandaloneDeriving #-}
-{-# LANGUAGE FlexibleContexts #-}
+{-# LANGUAGE TemplateHaskell #-}
 module Data.Text.Prettyprint.EDoc.Q
 ( ppr
 ) where
 
 import Language.Haskell.Meta.Parse ( parseExp )
-import qualified Data.Text.Prettyprint.Doc as Pretty
-import qualified Data.Text.Prettyprint.Doc.Render.Text as Render
 import Data.Generics
 import qualified Language.Haskell.TH as TH
 import Language.Haskell.TH.Quote
 import Text.Parsec
-import qualified System.IO as IO
 
 import Data.Text.Prettyprint.EDoc.Internal
 

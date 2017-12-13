@@ -1,23 +1,14 @@
-{-# LANGUAGE RankNTypes #-}
-{-# LANGUAGE ExistentialQuantification #-}
-{-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE DeriveDataTypeable #-}
-{-# LANGUAGE StandaloneDeriving #-}
-{-# LANGUAGE FlexibleContexts #-}
+{-# LANGUAGE ExistentialQuantification #-}
+{-# LANGUAGE RankNTypes #-}
 module Data.Text.Prettyprint.EDoc.Internal
 ( EDoc(..)
 , Delim(..)
 ) where
 
-import Language.Haskell.Meta.Parse ( parseExp )
 import Data.Text.Prettyprint.Doc ( Pretty, Doc, pretty )
 import qualified Data.Text.Prettyprint.Doc as Pretty
-import qualified Data.Text.Prettyprint.Doc.Render.Text as Render
 import Data.Generics
-import qualified Language.Haskell.TH as TH
-import Language.Haskell.TH.Quote
-import Text.Parsec
-import qualified System.IO as IO
 
 data Delim = Parens | Brackets | Braces | Angles
   deriving (Show, Data)

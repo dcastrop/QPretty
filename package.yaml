@@ -30,6 +30,8 @@ dependencies:
 library:
   source-dirs: src
   exposed-modules: Data.Text.Prettyprint.EDoc
+  ghc-options:
+  - -Wall
 
 tests:
   QPretty-test:
