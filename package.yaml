@@ -1,5 +1,5 @@
-name:                QPretty
-version:             0.1.1.0
+name:                quoted-prettyprinter
+version:             0.1.1
 github:              dcastrop/QPretty
 license:             BSD3
 author:              David Castro-Perez<david.castro.dcp@gmail.com>
@@ -42,4 +42,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - QPretty
+    - quoted-prettyprint
