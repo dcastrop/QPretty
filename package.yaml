@@ -32,6 +32,7 @@ library:
   exposed-modules: Data.Text.Prettyprint.EDoc
   ghc-options:
   - -Wall
+  - -Werror
 
 tests:
   QPretty-test:
@@ -41,5 +42,7 @@ tests:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -Wall
+    - -Werror
     dependencies:
     - quoted-prettyprint
