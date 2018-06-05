@@ -54,7 +54,7 @@ symbol :: String -> Parsec String u String
 symbol name  = try (lexeme (string name))
 -- parens       = between (symbol "(") (symbol ")")
 delim :: Parsec String u a -> Parsec String u a
-delim = between (symbol "$") (symbol "$")
+delim = lexeme . between (symbol "$") (symbol "$")
 
 escape :: Parsec String u String
 escape = do
@@ -117,7 +117,8 @@ pAtom =   (symbol "nest" >> ni >>= \i -> fmap (TNest i) (delim pTerm))
     delimp =   try (lookAhead $ symbol "+")
            <|> try (lookAhead $ symbol ">")
            <|> try (lookAhead $ symbol "+/")
-           <|> try (lookAhead $ symbol "//")
+           <|> try (lookAhead $ symbol "+|")
+           <|> try (lookAhead $ symbol "|")
            <|> try (lookAhead $ symbol "$")
            <|> (try eof >> return "")
 
